@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:amazon/layouts/screen_layout.dart';
 import 'package:amazon/screens/home.dart';
 import 'package:amazon/screens/sign_up.dart';
 import 'package:amazon/utils/colors.dart';
@@ -107,7 +108,7 @@ class _SignInState extends State<SignIn> {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) => Home()),
+                                          builder: (context) => ScreenLayout()),
                                     );
                                   } else {
                                     print('object');

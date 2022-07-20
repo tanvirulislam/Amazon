@@ -1,5 +1,6 @@
 // ignore_for_file: sized_box_for_whitespace, prefer_const_constructors
 
+import 'package:amazon/layouts/screen_layout.dart';
 import 'package:amazon/screens/home.dart';
 import 'package:amazon/utils/colors.dart';
 import 'package:amazon/utils/conostant.dart';
@@ -133,7 +134,7 @@ class _SignUpState extends State<SignUp> {
                                         password: passwordController.text,
                                         context: context,
                                       );
-                                      Navigator.push(context, MaterialPageRoute(builder: (context) => Home(),));
+                                      Navigator.push(context, MaterialPageRoute(builder: (context) => ScreenLayout(),));
                                     }
                                   },
                                 )

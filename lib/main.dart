@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:amazon/layouts/screen_layout.dart';
 import 'package:amazon/screens/home.dart';
 import 'package:amazon/screens/sign_in.dart';
 import 'package:amazon/utils/colors.dart';
@@ -38,15 +39,17 @@ class MyApp extends StatelessWidget {
       title: 'Amazon',
       theme:
           ThemeData.light().copyWith(scaffoldBackgroundColor: backgroundColor),
-      home: StreamBuilder(
-          stream: FirebaseAuth.instance.authStateChanges(),
-          builder: (context, snapshot) {
-             if (snapshot.hasData) {
-              return Home();
-            } else {
-               return SignIn();
-             }
-          }),
+      home: ScreenLayout()
+      // StreamBuilder(
+      //   stream: FirebaseAuth.instance.authStateChanges(),
+      //   builder: (context, snapshot) {
+      //     if (snapshot.hasData) {
+      //       return ScreenLayout();
+      //     } else {
+      //       return SignIn();
+      //     }
+      //   },
+      // ),
     );
   }
 }
