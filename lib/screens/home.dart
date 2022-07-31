@@ -1,7 +1,9 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:amazon/screens/search_screen.dart';
 import 'package:amazon/utils/colors.dart';
+import 'package:amazon/widgets/banner_add.dart';
+import 'package:amazon/widgets/categories_list_view.dart';
 import 'package:amazon/widgets/search_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -16,45 +18,13 @@ class Home extends StatelessWidget {
           child: SearchBar(),
           preferredSize: Size.fromHeight(80),
         ),
-        body: Center(
-          child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Container(
-            width: 300,
-            color: Colors.amber,
-            height: 100,
-            child: InkWell(
-              onTap: () =>  Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => SearchScreen(),
-                  ),
-                ),
-              child: TextField(
-                readOnly: true,
-                decoration: InputDecoration(
-                  hintText: 'Search for something in Amazon',
-                  fillColor: Colors.white,
-                  filled: true,
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(7),
-                    borderSide: BorderSide(color: Colors.grey),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(7),
-                    borderSide: BorderSide(color: Colors.grey),
-                  ),
-                ),
-              ),
-            ),
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              CategoryListView(),
+              BannerAdd(),
+            ],
           ),
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.mic_outlined),
-          )
-        ],
-      ),
         ),
       ),
     );

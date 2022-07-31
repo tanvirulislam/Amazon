@@ -39,6 +39,7 @@ dependencies:
   cloud_firestore: ^3.1.18
   firebase_storage: ^10.2.18
   flutter_launcher_icons: ^0.9.3
+  carousel_slider: ^4.1.1
 
 flutter_icons:
   android: true

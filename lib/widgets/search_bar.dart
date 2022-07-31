@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, must_be_immutable, use_key_in_widget_constructors
 
 import 'package:amazon/screens/search_screen.dart';
 import 'package:amazon/utils/colors.dart';
@@ -7,8 +7,6 @@ import 'package:flutter/material.dart';
 
 class SearchBar extends StatelessWidget {
   @override
-  Size screensize = Utils().getScreenSize();
-
   Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;
     return InkWell(
@@ -40,6 +38,12 @@ class SearchBar extends StatelessWidget {
                     color: Colors.grey,
                   ),
                   borderRadius: BorderRadius.circular(7),
+                  boxShadow: [BoxShadow(
+                    color: Colors.black.withOpacity(.2),
+                    blurRadius: 8,
+                    spreadRadius: 1,
+                    offset: Offset(0, 5),
+                  )]
                 ),
                 alignment: Alignment.centerLeft,
                 child: Padding(
